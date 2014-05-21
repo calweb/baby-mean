@@ -4,13 +4,12 @@ var express = require('express')
   , routes = require('./routes')
   , http = require('http')
   , path = require('path')
-  , os = require('os')
   , db = mongoskin.db((process.env.MONGOLAB_URI || 'localhost:27017/test'), {safe:true});
 
 // get an instance of express
 var app = express();
 
-var allowOrigin = function(req, res, next) {
+var corsStuff = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', process.env.DOMAIN);
     res.header('Access-Control-Allow-Methods', 'GET,PUT,PATCH,POST,DELETE,OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
@@ -42,14 +41,6 @@ app.configure(function(){
 app.configure('development', function(){
   app.use(express.errorHandler());
 });
-
-// PLEASE NOTE this turns on CORS for everything, everywhere!
-// Almost certainly not what you want to do in production.
-// app.all('/*', function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Headers", "X-Requested-With");
-//   next();
-// });
 
 // index route
 app.get('/', routes.index);

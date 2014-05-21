@@ -1,10 +1,32 @@
-### Tiny Server
-Nothing to see here, just a little Express app with a dummy-simple CRUD API using Mongoskin. CORS traffic from any source is allowed to make it easy to POST/GET/PUT/DELETE JSON payloads from other apps running locally. You've been warned!
+# Baby Mean - small reference app for the mean stack
+Nothing groundbreaking here!  This app is intended as a learning tool that consists of Angular, Node, MongoDB, and Express with CRUD.
 
-Just meant for lightweight local dev and messing around. Obviously not fit for prod :D
+Would not recommend use in a production environment!
 
-#### Dependencies
-Run `npm install` and `bower update` to get your dependencies ready. `./node_modules` is in the `.gitignore`, Yeoman-style :)
+#### Local Deployment
+Install Dependencies: `npm install` (there's a postinstall in `package.json` to get bower dependencies).
+Install Mongo: 'brew install mongo' if on OSX or by other means.
+Run: `grunt` to run the default task.
 
-#### Usage
-Run `grunt` to fire it up, and make sure you have Mongo installed (`brew install mongo`) and that you've started the Mongo dæmon with `mongod`. Enjoy! 
+#### Heroku Deployment
+Required:
+- Mongolab account, or other offering for mongodb
+- Heroku account and heroku toolbelt (heroku-cli)
+
+Initialize and/or commit as git repo: `git init` and `git add .` and `git commit -am 'initial commit'`
+
+In root folder, create heroku app: `heroku create <appname>` or just `heroku create` to let Heroku name the app for you.
+
+Set Environment Variables: 
+`heroku config:add MONGOLAB_URI=mongodb://<username>:<password>@ds047478.mongolab.com:47478/myDB` (you'll see this url when you create a db in mongolab)
+
+`heroku config:add DOMAIN=yourdomain.com` (this is needed for CORS same origin)
+
+Run: `heroku push origin master`
+
+
+Have fun!!
+
+Special shoutout to @masondesu for http://github.com/masondesu/tiny-server (which comprises the node, express, mongo side of this repo)
+
+
