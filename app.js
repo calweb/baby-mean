@@ -25,7 +25,7 @@ var corsStuff = function(req, res, next) {
 
 // configure it
 app.configure(function(){
-  app.use(allowOrigin);
+  app.use(corsStuff);
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
