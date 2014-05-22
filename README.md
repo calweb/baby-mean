@@ -24,7 +24,7 @@ Set Environment Variables:
 
 `heroku config:add DOMAIN=yourdomain.com` (this is needed for CORS same origin)
 
-Run: `heroku push origin master`
+Run: `git push heroku master`
 
 
 Have fun!!
