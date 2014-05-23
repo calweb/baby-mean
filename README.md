@@ -22,7 +22,6 @@ Set Environment Variables:
 
 `heroku config:add MONGOLAB_URI=mongodb://<username>:<password>@ds047478.mongolab.com:47478/myDB` (you'll see this url when you create a db in mongolab)
 
-`heroku config:add DOMAIN=yourdomain.com` (this is needed for CORS same origin)
 
 Run: `git push heroku master`
 
