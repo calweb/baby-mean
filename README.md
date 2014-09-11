@@ -7,6 +7,7 @@ Would not recommend use in a production environment!
 Install Dependencies: `npm install` (there's a postinstall in `package.json` to get bower dependencies).
 
 Install Mongo: 'brew install mongo' if on OSX or by other means.
+Run Mongo Daemon: 'mongod' to start the local mongo database up 
 Run: `grunt` to run the default task.
 
 ### Heroku Deployment
