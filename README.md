@@ -71,4 +71,20 @@ Have fun!!
 
 Special shoutout to @masondesu for http://github.com/masondesu/tiny-server (which comprises the node, express, mongo side of this repo)
 
+### Todos
+
+There's a lot more I want to add, but for starters:
+
+[] Add unit tests
+[] Add e2e tests
+[] Demonstrate some common api examples
+[] Add common files, services, components
+[] Add a more complex feature, like an ACE editor
+[] Add Restangular example
+[] Add ui.router examples
+[] Create a few mongoose Schema examples
+[] Use passport module for third party authentication
+
+Feel free to send pull requests!
+
 
