@@ -1,17 +1,18 @@
 doctype 5
 html
-	head
-		title= title
-		link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.min.css')
-		link(rel='stylesheet', href='/css/style.css')
-	body(ng-app= ngApp )
-		block content
-		script(src='/components/jquery/dist/jquery.js')
-		script(src='/components/angular/angular.js')
-		script(src='/components/angular-resource/angular-resource.js')
-		script(src='/components/angular-cookies/angular-cookies.js')
-		script(src='/components/angular-sanitize/angular-sanitize.js')
-		script(src='/components/angular-route/angular-route.js')
-		script(src='/js/app.js')
-		script(src='/js/services/services.js')
-		script(src='/js/controllers/main.js')
+    head
+        title= title
+        link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/css/style.css')
+    body(ng-app= ngApp )
+        block content
+        script(src='/components/jquery/dist/jquery.js')
+        script(src='/components/angular/angular.js')
+        script(src='/components/angular-cookies/angular-cookies.js')
+        script(src='/components/angular-sanitize/angular-sanitize.js')
+        script(src='/components/angular-route/angular-route.js')
+        script(src='/app.js')
+        script(src='/homeCtrl.js')
+        script(src='/posts/posts.js')
+        script(src='/posts/postsController.js')
+        script(src='/posts/postsService.js')
