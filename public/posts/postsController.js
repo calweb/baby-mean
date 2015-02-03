@@ -3,26 +3,28 @@
 
     angular
         .module('posts')
-        .controller('postsController', ['$scope', 'postsService', '$location', '$routeParams', function ($scope, postsService, $location, $routeParams) {
+        .controller('postsController', ['postsService', '$location', '$routeParams',
+        function(postsService, $location, $routeParams) {
+            var postsCtl = this;
             postsService.getPosts().success(function (posts) {
-                $scope.posts = posts;
+                postsCtl.posts = posts;
             });
 
             postsService.getPost($routeParams.postId).success(function (post) {
-                $scope.post = post;
+                postsCtl.post = post;
             });
 
-            $scope.createPost = function (newPost) {
+            postsCtl.createPost = function (newPost) {
                 postsService.createPost(newPost);
                 $location.path('/posts');
             };
 
-            $scope.editPost = function (post) {
+            postsCtl.editPost = function (post) {
                 postsService.editPost(post);
                 $location.path('/posts');
             };
 
-            $scope.deletePost = function (id) {
+            postsCtl.deletePost = function (id) {
                 postsService.deletePost(id);
                 $location.path('/posts');
             }

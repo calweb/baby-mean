@@ -9,19 +9,19 @@
             $routeProvider
                 .when('/posts', {
                     templateUrl: 'posts/views/list.html',
-                    controller: 'postsController'
+                    controller: 'postsController as postsCtl'
                 })
                 .when('/posts/new', {
                     templateUrl: 'posts/views/create.html',
-                    controller: 'postsController'
+                    controller: 'postsController as postsCtl'
                 })
                 .when('/posts/:postId', {
                     templateUrl: 'posts/views/show.html',
-                    controller: 'postsController'
+                    controller: 'postsController as postsCtl'
                 })
                 .when('/posts/:postId/edit', {
                     templateUrl: 'posts/views/edit.html',
-                    controller: 'postsController'
+                    controller: 'postsController as postsCtl'
                 });
         });
 
