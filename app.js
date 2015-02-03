@@ -42,7 +42,7 @@ app.param('collectionName', function(req, res, next, collectionName){
 // for the cool help
 
 // GET /collections/:collectionName
-app.get('/api/collections/:collectionName', function(req, res) {
+app.get('/api/collections/:collectionName', function(req, res, next) {
   req.collection.find({},{limit:100, sort: [['_id',-1]]}).toArray(function(e, results){
     if (e) return next(e)
     res.send(results)
@@ -50,7 +50,7 @@ app.get('/api/collections/:collectionName', function(req, res) {
 })
 
 // POST /collections/:collectionName
-app.post('/api/collections/:collectionName', function(req, res) {
+app.post('/api/collections/:collectionName', function(req, res, next) {
   req.collection.insert(req.body, {}, function(e, results){
     if (e) return next(e)
     res.send(results[0])
@@ -59,7 +59,7 @@ app.post('/api/collections/:collectionName', function(req, res) {
 
 
 // GET /collections/:collectionName/:id
-app.get('/api/collections/:collectionName/:id', function(req, res) {
+app.get('/api/collections/:collectionName/:id', function(req, res, next) {
   req.collection.findOne({_id: req.collection.id(req.params.id)}, function(e, result){
     if (e) return next(e)
     res.send(result)
@@ -78,7 +78,7 @@ app.put('/api/collections/:collectionName/:id', function(req, res) {
 })
 
 // DELETE /collections/:collectionName
-app.del('/api/collections/:collectionName/:id', function(req, res) {
+app.del('/api/collections/:collectionName/:id', function(req, res, next) {
   req.collection.remove({_id: req.collection.id(req.params.id)}, function(e, result){
     if (e) return next(e)
     res.send((result===1)?{msg:'success'}:{msg:'error'})
